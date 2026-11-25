@@ -72,6 +72,13 @@ def shadow_sprite() -> Image.Image:
     return im
 
 
+def ring_sprite(accent) -> Image.Image:
+    im = Image.new("RGBA", (40, 18), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.ellipse((2, 2, 38, 16), outline=tuple(accent) + (210,), width=3)
+    return im
+
+
 def font(size):
     return ImageFont.truetype(str(FONT), size)
 
@@ -158,6 +165,7 @@ def map_overview():
 if __name__ == "__main__":
     for name, spec in PALETTE.items():
         sprite(name, spec).save(SPR / f"actor_{name}.png")
+        ring_sprite(spec[3]).save(SPR / f"ring_{name}.png")
     shadow_sprite().save(SPR / "shadow.png")
     menu_bg()
     sheet()

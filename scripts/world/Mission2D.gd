@@ -563,6 +563,9 @@ class MarkerLayer extends Node2D:
 		draw_circle(target, 26.0, Color(0.95, 0.72, 0.30), false, 3.0)
 		draw_line(target + Vector2(-34, 0), target + Vector2(-18, 0), Color(0.95, 0.72, 0.30), 2.0)
 		draw_line(target + Vector2(18, 0), target + Vector2(34, 0), Color(0.95, 0.72, 0.30), 2.0)
+		# Vertical beam sells the 2.5D height of the objective marker.
+		draw_line(target + Vector2(8, -4), target + Vector2(16, -36), Color(0.95, 0.72, 0.30, 0.75), 2.0)
+		draw_circle(target + Vector2(16, -36), 4.5, Color(1.0, 0.86, 0.45))
 		if mission.thermal:
 			for a in mission.actors:
 				if a != null and a.alive and a.team != "civilian":

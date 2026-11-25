@@ -235,10 +235,20 @@ func _draw_building(b: Dictionary) -> void:
 	draw_colored_polygon(roof, _shade(base_col, 1.22))
 	draw_polyline(roof, Color(0.05, 0.06, 0.07), 1.6, true)
 	var r: Rect2 = b["rect"]
-	if r.size.length() > 30.0:
-		var rc: Vector2 = centroid + off + Vector2(1.0, -2.0)
-		draw_circle(rc, 4.0, _shade(base_col, 0.65))
-		draw_line(rc + Vector2(-6, 3), rc + Vector2(6, 3), Color(0.08, 0.09, 0.10), 1.5)
+	if r.size.length() > 34.0:
+		# Stair hut / water tank on the roof, drawn as a small 2.5D box.
+		var rc: Vector2 = centroid + off + Vector2(2.0, -4.0)
+		var hs := Vector2(9.0, 6.0)
+		var hut := PackedVector2Array([
+			rc + Vector2(-hs.x, -hs.y), rc + Vector2(hs.x, -hs.y),
+			rc + Vector2(hs.x, hs.y), rc + Vector2(-hs.x, hs.y)])
+		var hoff := Vector2(3.0, -5.0)
+		draw_colored_polygon(PackedVector2Array([hut[3], hut[2], hut[2] + hoff, hut[3] + hoff]), _shade(base_col, 0.55))
+		var hroof := PackedVector2Array()
+		for q in hut:
+			hroof.append(q + hoff)
+		draw_colored_polygon(hroof, _shade(base_col, 1.42))
+		draw_polyline(hroof, Color(0.05, 0.06, 0.07), 1.0, true)
 	draw_circle(b["door"], 3.2, Color(0.95, 0.76, 0.34))
 
 

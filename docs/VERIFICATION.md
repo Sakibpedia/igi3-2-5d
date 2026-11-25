@@ -22,4 +22,11 @@ Godot 4.3 stable, Windows. All commands exited 0.
 All mission results are in the 2D/2.5D shared test suite output; the 2.5D edition
 uses the same gameplay rules with extruded rendering.
 
+## Cycle 2 polish
+
+- Team-coloured ground rings and larger billboard figures for readability.
+- Roof huts / water tanks drawn as small 2.5D boxes on large towers.
+- Objective markers have a vertical beam to emphasise height.
+- All six modes re-rendered without crashes; deep suite re-run and green.
+
 Credit: S M Nazmuz Sakib. Map data © OpenStreetMap contributors (ODbL).
