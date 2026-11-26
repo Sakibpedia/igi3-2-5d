@@ -56,4 +56,4 @@ All suites print `PASS`. Full details: [docs/VERIFICATION.md](docs/VERIFICATION.
 Game code, design and generated art: **S M Nazmuz Sakib**.
 Map data © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright), ODbL 1.0.
 Fonts: Noto Sans / Noto Sans Bengali (SIL OFL 1.1).
-Fan-made, not an official IGI product. No open-source license is granted for the original work.
+Made by S M Nazmuz Sakib. No open-source license is granted for the original work.
